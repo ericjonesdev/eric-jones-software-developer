@@ -5,6 +5,10 @@
     background-color: #6A3F00;
 }
 
+.bg-color-three-reasons {
+    background-color: #fff;
+}
+
 .ui-menu-color-home {
     background-color: #C7AE8F;
 }
@@ -18,11 +22,49 @@
 }
 
 .ui-menu-color-download {
-    background-color: #f25a0d;
+    background-color: #560e0b;
+}
+/* ----------------------------Special paddings/margins/text */
+
+h1,
+h2,
+h3,
+h4 {
+    margin: 0;
 }
 
+.uppercase {
+    text-transform: uppercase;
+}
 
-/* --------------------------------------------------Heading */
+.general-sub {
+    font-family: "Exo", sans-serif;
+    font-weight: 300;
+    color: #fafafa;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.row-table {
+    display: table;
+}
+
+.section-column {
+    display: table-cell;
+    padding: 0 30px 30px;
+    float: none;
+}
+
+.section-heading {
+    font-family: "Exo", sans-serif;
+    font-weight: 300;
+    margin-top: 25px;
+    margin-bottom: 40px;
+}
+
+/* ---------------------------------------------Heading */
 header {
     margin: 0;
 }
@@ -33,7 +75,7 @@ header {
 
 
 .logo {
-    background: url("../images/resumelogo1.png");
+    background: url("../images/resumelogo4.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -41,7 +83,7 @@ header {
     transition: all .5s ease-in-out;
     -moz-transition: all .5s ease-in-out;
     -webkit-transition: all .5s ease-in-out;
-}
+} 
 
 .name {
     font-family: "Exo", sans-serif;
@@ -58,4 +100,111 @@ header {
     margin-top: 20px;
     margin-bottom: 90px;
     color: #fff;
+}
+
+.list-inline-item:not(:last-child) {
+    margin: 0;
+}
+
+.menucontainer {
+    font-size: 0;
+}
+
+#nav {
+    margin: 0;
+}
+
+#nav li {
+    font-size: 14px;
+    padding: 0;
+}
+
+.menuitem {
+    height: 120px;
+    text-align: center;
+    padding: 0;
+}
+
+.menuitem a {
+    width: 100%;
+    text-decoration: none;
+    color: #fff;
+    height: 120px;
+}
+
+.menuitem a i {
+    padding-top: 22px;
+    display: block;
+    color: #fafafa;
+    font-size: 26px;
+}
+
+.menuitem span {
+    display: block;
+    width: 100%;
+    padding-top: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+/* ---------------------------------------------Hover.css */
+
+.hvr-sweep-to-bottom:before {
+    background: rgba(0, 0, 0, 0.2);
+    height: 120px;
+}
+
+/* ------------------------------------------------Footer */
+
+footer {
+    background-color: #6A3F00;
+    color: #fafafa;
+    min-height: 120px;
+    margin: 0;
+}
+
+.cv-pdf i {
+    font-size: 18px;
+    color: #fafafa;
+    text-align: center;
+    padding-left: 5px;
+    transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+}
+
+.cv-pdf i:hover {
+    color: #2089e6;
+}
+
+.social-links {
+    padding-bottom: 15px;
+}
+
+.social-links li a i {
+    width: 32px;
+    height: 32px;
+    padding: 12px;
+    border-radius: 50%;
+    font-size: 13px;
+    line-height: 7px;
+    text-align: center;
+    color: äfafafa;
+    background: #F9D06B;
+    transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+}
+
+.social-links li a i:hover {
+    background: #866130;
+}
+
+#footer-details {
+    padding: 20px;
 }
