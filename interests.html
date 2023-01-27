@@ -203,5 +203,48 @@ With the University of Phoenix’s Master of Information Systems degree program,
         </div>
 
     </footer>
+    <script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3Skvicin_t6iXE9Aar4oxp8N219fS56Y&callback=initMap" type="text/javascript"></script>
+    <script>
+        function initMap() {
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 3,
+                center: { lat: 33.410, lng: -112.011 },
+            });
+            const infoWindow = new google.maps.InfoWindow({
+                content: "",
+                disableAutoPan: true,
+            });
+            // Create an array of alphabetical characters used to label the markers.
+            const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            // Add some markers to the map.
+            const markers = locations.map((position, i) => {
+                const label = labels[i % labels.length];
+                const marker = new google.maps.Marker({
+                position,
+                label,
+                });
+
+                // markers can only be keyboard focusable when they have click listeners
+                // open info window when marker is clicked
+                marker.addListener("click", () => {
+                infoWindow.setContent(label);
+                infoWindow.open(map, marker);
+                });
+                return marker;
+            });
+
+            // Add a marker clusterer to manage the markers.
+            var markerCluster = new MarkerClusterer({ map, markers });
+            }
+
+            const locations = [
+            { lat: 33.41086, lng: -112.01128 },
+            { lat: 33.41095, lng: -112.01385 },
+            { lat: 33.41087, lng: -112.01138 },
+
+            window.initMap = initMap
+        ];
+    </script>
 </body>
 </html>
