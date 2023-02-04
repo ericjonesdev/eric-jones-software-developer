@@ -400,3 +400,6 @@ button[type="Submit"] {
     overflow: visible;
   }
 
+  #grey-ghost {
+    background-color: rgb(244,244,244);
+  }
