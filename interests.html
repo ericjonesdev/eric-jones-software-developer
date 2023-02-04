@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <title>Eric Jones:Software Developer</title>
 </head>
 <body>
@@ -59,9 +60,10 @@
                         <h3 class="section-heading uppercase">
                             Personal Development & Learning
                         </h3>
+                        <!--The div element for the map -->
+                        <div id="map">hey</div>
                     </div>
                 </div>
-                <div id="map"></div>
             </div>
             <div class="col-md-8 bg-color-groups">
                 <div class="row">
@@ -203,48 +205,27 @@ With the University of Phoenix’s Master of Information Systems degree program,
         </div>
 
     </footer>
-    <script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3Skvicin_t6iXE9Aar4oxp8N219fS56Y&callback=initMap" type="text/javascript"></script>
+    <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3Skvicin_t6iXE9Aar4oxp8N219fS56Y&callback=initMap">
+    </script>
     <script>
         function initMap() {
-            const map = new google.maps.Map(document.getElementById("map"), {
-                zoom: 3,
-                center: { lat: 33.410, lng: -112.011 },
-            });
-            const infoWindow = new google.maps.InfoWindow({
-                content: "",
-                disableAutoPan: true,
-            });
-            // Create an array of alphabetical characters used to label the markers.
-            const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            // Add some markers to the map.
-            const markers = locations.map((position, i) => {
-                const label = labels[i % labels.length];
-                const marker = new google.maps.Marker({
-                position,
-                label,
-                });
 
-                // markers can only be keyboard focusable when they have click listeners
-                // open info window when marker is clicked
-                marker.addListener("click", () => {
-                infoWindow.setContent(label);
-                infoWindow.open(map, marker);
-                });
-                return marker;
-            });
+        // The location of UOP
+        const UOP = { lat: 33.411, lng: -112.012 };
+        // The map, centered at UOP
+        const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 4,
+        center: UOP,
+        });
+        // The marker, positioned at UOP
+        const marker = new google.maps.Marker({
+        position: UOP,
+        map: map,
+        });
+    }
 
-            // Add a marker clusterer to manage the markers.
-            var markerCluster = new MarkerClusterer({ map, markers });
-            }
-
-            const locations = [
-            { lat: 33.41086, lng: -112.01128 },
-            { lat: 33.41095, lng: -112.01385 },
-            { lat: 33.41087, lng: -112.01138 },
-
-            window.initMap = initMap
-        ];
+        window.initMap = initMap;
     </script>
 </body>
 </html>
